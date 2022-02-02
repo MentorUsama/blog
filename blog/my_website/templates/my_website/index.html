@@ -2,17 +2,37 @@
 {% load static %}
 
 {% block css_files %}
-    <link rel="stylesheet" href="{% static 'my_website/index.css' %}" />
+<link rel="stylesheet" href="{% static 'my_website/index.css' %}" />
 {% endblock css_files %}
 
 {% block page_title %}Homepage{% endblock page_title %}
 
 {% block page_body %}
-    <section id="welcome">
-        <header>
-            <img src="{% static 'images/myProfile.jpeg' %}" alt="usama farhat's -- The author of this blog" />
-            <h2>Usama Blog</h2>
-        </header>
-        <p>Hi, I am usama farhat and i love to blog about tech and the world</p>
-    </section>
+<section id="welcome">
+    <header>
+        <img src="{% static 'images/myProfile.jpeg' %}" alt="usama farhat's -- The author of this blog" />
+        <h2>Usama Blog</h2>
+    </header>
+    <p>Hi, I am usama farhat and i love to blog about tech and the world</p>
+</section>
+
+<section id="latest-posts">
+    <h2>My Latest Posts</h2>
+    <ul>
+        <!-- Post 1 -->
+        {% for post in posts %}
+        <li>
+            <article class="post">
+                <a href="{% url 'my_website:post-detail-page' slug=post.slug %}">
+                    <img src="" alt="{{post.slug}}" />
+                    <div class="post_content">
+                        <h3>{{post.title}}</h3>
+                        <p>{{post.excerpt}}</p>
+                    </div>
+                </a>
+            </article>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
 {% endblock page_body %}
