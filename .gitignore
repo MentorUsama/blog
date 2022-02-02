@@ -150,3 +150,6 @@ README.md
 cython_debug/
 
 # End of https://www.toptal.com/developers/gitignore/api/django
+
+# Hidding Practised app not related to blog
+blog/poll
