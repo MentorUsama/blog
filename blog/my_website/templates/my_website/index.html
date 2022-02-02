@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'my_website/index.css' %}" />
+{% endblock css_files %}
+
 {% block page_title %}Homepage{% endblock page_title %}
+
 {% block page_body %}
-    <h1>This is my Homepage</h1>
+    <section id="welcome">
+        <header>
+            <img src="" alt="usama farhat's -- The author of this blog" />
+            <h2>Usama Blog</h2>
+        </header>
+        <p>Hi, I am usama farhat and i love to blog about tech and the world</p>
+    </section>
 {% endblock page_body %}
