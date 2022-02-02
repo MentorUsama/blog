@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def starting_page(request):
-    return HttpResponse("This is Starting Page")
+    return render(request,"my_website/index.html")
 
 def posts(request):
     return HttpResponse("This is posts page")
